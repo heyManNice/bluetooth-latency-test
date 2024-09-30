@@ -210,7 +210,13 @@ window.onload = function () {
     ripple.addEventListener("animationend", () => {
         ripple.classList.remove('ripple_palying');
     });
-    getAudioDevices();
+    navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(stream => {
+        getAudioDevices();
+    })
+    .catch(error => {
+        alert("请给予音频设备访问权限后刷新，以获取所有的音频设备信息，本网站不会上传你的数据，网站开源可查证");
+    });
 }
 
 
