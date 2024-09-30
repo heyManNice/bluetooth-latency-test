@@ -1,0 +1,144 @@
+main{
+    text-align: center;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+body{
+    height: 100vh;
+}
+#info{
+    font-size: 6rem;
+}
+.menu{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header,footer{
+    flex: 0 0 50px;
+    padding: 10px 40px;
+}
+button,select{
+    bottom: 20%;
+    width: 200px;
+}
+select{
+    margin-top: 100px;
+}
+div{
+    flex: 0 0 auto;
+}
+main>span{
+    flex: 1 1 auto;
+}
+table{
+    table-layout: fixed;
+}
+
+td{
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+}
+td:first-of-type{
+    width: 150px;
+}
+h1{
+    font-size: 3rem;
+    margin: 40px;
+}
+.scene{
+    background-color: #0172AD;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 00vh;
+    width: 100vw;
+    transition: all 600ms ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+    user-select: none;
+}
+.scene *{
+    color: white;
+}
+.scene > h1{
+    text-align: center;
+    position: absolute;
+    margin: auto;
+    height: fit-content;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+
+.ripple {
+    content: '';
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-image: radial-gradient(circle, #ccc 10%, transparent 10.1%);
+    transform: scale(0.1);
+    opacity: 0.4;
+    left: 0px;
+    top: 0px;
+}
+
+.ripple_palying {
+    animation: ripple 600ms;
+}
+#count{
+    position: fixed;
+    font-size: 50rem;
+    right: 8rem;
+    bottom: -15rem;
+    opacity: 0;
+}
+@keyframes count {
+    0%{
+        right: -50rem;
+        opacity: 0.4;
+    }
+    50%{
+        right: 8rem;
+    }
+    75%{
+        opacity: 0.3;
+    }
+    90%{
+        right: 8rem;
+        opacity: 0;
+    }
+    100%{
+        right: 8rem;
+        opacity: 0;
+    }
+
+}
+@keyframes ripple {
+    0%{
+        transform: scale(0.1);
+        opacity: 0.4;
+    }
+    100%{
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+.progress{
+    display: block;
+    position: fixed;
+    height: 2vh;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 0vw;
+    transition: width 300ms;
+}
+
+.tips{
+    font-size: 0.8rem;
+    color: #6d6d6d;
+    font-weight: bold;
+}

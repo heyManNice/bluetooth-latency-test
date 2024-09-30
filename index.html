@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蓝牙耳机延迟测试</title>
+    <link rel="stylesheet" href="./css/pico.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js"></script>
+</head>
+
+<body>
+    <page class="menu">
+        <header></header>
+        <main class="container">
+            <span></span>
+            <div>
+                <h1 id="title">现在，选择你的{{device}}开始</h1>
+                <p id="sub_title">
+                    普通人在短时间内的反应速度是比较稳定的，
+                    使用扬声器完成{{t}}次反应速度测试，
+                    然后使用蓝牙耳机完成{{t}}次反应速度测试。
+                    <br />
+                    由此得出蓝牙时延对你的反应速度的影响，
+                    间接得出蓝牙耳机的时延时间。
+                    听到<span onmousedown="play_sin()" data-tooltip="什么是Bi声？">Bi声</span>之后，尽你所快按下鼠标左键！
+                </p>
+                <p class="tips">⛔声明：测试中的延时包括：生成音频、浏览器播放、输入、芯片解码等时延，不代表你的反应速度。算出的蓝牙耳机时延仅供参考
+                    <a href="https://github.com/heyManNice/bluetooth-latency-test">
+                        <img src="https://flat.badgen.net/badge/github/bluetooth-latency-test?icon=github" alt="github">
+                    </a>
+                </p>
+                <select id="select"></select>
+                <button id="btn">开始</button>
+            </div>
+            <span></span>
+            <table>
+                <thead id="thead"></thead>
+                <tbody id="tbody"></tbody>
+            </table>
+
+        </main>
+        <footer>
+        </footer>
+    </page>
+    <page class="scene">
+        <span class="progress"></span>
+        <div class="ripple"></div>
+        <h1 id="info">等待Bi声...</h1>
+        <span id="count"></span>
+    </page>
+</body>
+
+</html>
